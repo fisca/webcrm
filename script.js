@@ -5,6 +5,8 @@ function configGroupCustomer() {
             $("#content").html(data);
         }
     });
+
+    return false;
 }
 
 function saveGroupCustomer() {
@@ -19,4 +21,40 @@ function saveGroupCustomer() {
             }
         }
     });
+
+    return false;
+}
+
+function editGroupCustomer(id) {
+    $.ajax({
+        url: 'index.php?r=site/editGroupCustomer',
+        data: {
+            id: id
+        },
+        dataType: 'json',
+        success: function(data) {
+            $("input[name=name]").val(data.name);
+            $("input[name=id]").val(data.id);
+        }
+    });
+
+    return false;
+}
+
+function deleteGroupCustomer(id) {
+    if (confirm("Delete ?")) {
+        $.ajax({
+            url: 'index.php?r=site/deleteGroupCustomer',
+            data: {
+                id: id
+            },
+            success: function(data) {
+                if (data === 'success') {
+                    configGroupCustomer();
+                }
+            }
+        });
+    }
+
+    return false;
 }
