@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
         <link rel="stylesheet" href="../jquery-ui/jquery-ui.css">
+        <link rel="stylesheet" href="../style.css">
         <?php
         Yii::app()->clientScript->registerScriptFile("../jquery.js");
         Yii::app()->clientScript->registerScriptFile("../jquery-ui/jquery-ui.js");
@@ -54,8 +55,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#" onclick="return configGroupCustomer()"><i class="glyphicon glyphicon-cog"></i> ประเภทลูกค้า</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-cog"></i> ประเภทการติต่อ</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-cog"></i> พนักงาน</a></li>
+                        <li><a href="#" onclick="return configVisitType()"><i class="glyphicon glyphicon-cog"></i> ประเภทการติดต่อ</a></li>
+                        <li><a href="#" onclick="return configEmployee()"><i class="glyphicon glyphicon-cog"></i> พนักงาน</a></li>
                     </ul>
                 </li>
                 <li>
