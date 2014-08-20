@@ -10,4 +10,12 @@ class Employee extends CActiveRecord {
         return 'employees';
     }
 
+    public function getGender() {
+        if ($this->gender == 'f') {
+            return "หญิง";
+        } else {
+            return "ชาย";
+        }
+    }
+
 }

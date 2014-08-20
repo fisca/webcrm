@@ -86,7 +86,10 @@ class SiteController extends Controller {
 
     // ================ Employee =========================
     public function actionConfigEmployee() {
-        $this->renderPartial('//site/configEmployee');
+        $employees = Employee::model()->findAll();
+        $this->renderPartial('//site/configEmployee', array(
+            'employees' => $employees
+        ));
     }
 
     public function actionSaveEmployee() {
